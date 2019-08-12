@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import gliders from './gliderReducer';
+import manufacturers from './manufacturerReducer';
 
 const rootReducer = combineReducers({
-    gliders
+    gliders,
+    manufacturers
 })
 
 export default rootReducer;
