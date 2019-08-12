@@ -39,15 +39,15 @@ GlidersPage.propTypes = {
 function mapStateToProps(state) {
   return {
     gliders:
-      (!state.manufacturers.manufacturers || !state.manufacturers.manufacturers.length)
+      (!state.manufacturers.list || !state.manufacturers.list.length)
         ? []
-        : state.gliders.gliders.map(glider => {
+        : state.gliders.list.map(glider => {
           return {
             ...glider,
-            manufacturer: state.manufacturers.manufacturers.find(m => m.id === glider.manufacturerId)
+            manufacturer: state.manufacturers.list.find(m => m.id === glider.manufacturerId)
           }
         }),
-    manufacturers: state.manufacturers.manufacturers
+    manufacturers: state.manufacturers.list
   }
 }
 
