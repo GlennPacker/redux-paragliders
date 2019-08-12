@@ -8,6 +8,16 @@ export default function gliderReducer(state = { gliders: [] }, action) {
                 gliders: [...state.gliders, { ...action.glider }],
                 selectedGlider: { ...action.glider }
             }
+        case types.GLIDERS_LIST_LOADED_SUCCESS:
+            return {
+                ...state,
+                gliders: action.gliders
+            }
+        case types.GLIDERS_LIST_LOADED_FAILED:
+            return {
+                ...state,
+                error: action.error
+            }
         default:
             return state;
     }

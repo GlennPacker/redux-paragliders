@@ -1,5 +1,5 @@
 import { handleResponse, handleError } from "./apiUtils";
-const baseUrl = process.env.REACT_APP_API_URL + "/gliders/";
+const baseUrl = process.env.API_URL + "/gliders/";
 
 export function getGliders() {
   return fetch(baseUrl)
