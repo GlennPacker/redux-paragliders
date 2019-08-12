@@ -1,5 +1,5 @@
 import { handleResponse, handleError } from "./apiUtils";
-const baseUrl = process.env.REACT_APP_API_URL + "/manufacturers/";
+const baseUrl = process.env.API_URL + "/manufacturers/";
 
 export function getManufacturers() {
   return fetch(baseUrl)
