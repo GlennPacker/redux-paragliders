@@ -90,7 +90,7 @@ const manufacturers = [
 const newGlider = {
   id: null,
   name: "",
-  manufacturerId: null,
+  manufacturerId: 0,
   category: ""
 };
 

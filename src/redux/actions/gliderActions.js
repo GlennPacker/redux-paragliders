@@ -1,13 +1,6 @@
 import * as types from './actionTypes';
 import * as gliderApi from "../../api/gliderApi";
 
-export function createGlider(glider) {
-    return {
-        type: types.CREATE_GLIDER,
-        glider
-    }
-}
-
 export function loadGlidersSuccess(gliders) {
     return { type: types.GLIDERS_LIST_LOADED_SUCCESS, gliders };
 }
@@ -25,3 +18,19 @@ export function loadGliders() {
     }
 }
 
+export function saveGlider(glider) {
+    return function (dispatch) {
+        return gliderApi
+            .saveGlider(glider)
+            .then(glider => {
+                dispatch(saveGliderSuccess(glider))
+            })
+            .catch(error => {
+                throw error;
+            })
+    }
+}
+
+export function saveGliderSuccess(glider) {
+    return { type: types.GLIDER_SAVE_SUCCESS, glider }
+}

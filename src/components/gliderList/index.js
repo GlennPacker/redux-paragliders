@@ -20,6 +20,10 @@ const GliderList = ({ gliders }) => (
               <Link to={"/glider/" + glider.slug}>
                 {glider.name}
               </Link>
+              &nbsp;
+              <Link to={"/manage/glider/" + glider.slug}>
+                Edit
+              </Link>
             </td>
             <td>
               {glider.manufacturer.name}
